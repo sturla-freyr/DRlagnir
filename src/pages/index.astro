@@ -1,11 +1,295 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<!-- Navigation -->
+	<nav id="navbar" class="sticky top-0 z-50 transition-all duration-300">
+		<div class="bg-blue-600 text-white px-6 py-4">
+			<div class="container mx-auto flex justify-between items-center">
+				<div class="flex items-center gap-3">
+					<img src="../logo.jpeg" alt="Logo" class="h-10 w-auto transition-all duration-300" id="logo" />
+					<h1 class="text-2xl font-bold transition-all duration-300" id="brand">Dr. Lagnir</h1>
+				</div>
+				<div class="space-x-6">
+					<a href="#services" class="hover:text-blue-200 transition">Services</a>
+					<a href="#booking" class="hover:text-blue-200 transition">Book Now</a>
+					<a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section class="bg-gradient-to-br from-blue-500 to-blue-700 text-white py-24">
+		<div class="container mx-auto px-4 text-center">
+			<h2 class="text-5xl font-bold mb-4">Professional Plumbing Services</h2>
+			<p class="text-xl mb-8">Fast, Reliable, and Affordable Solutions</p>
+			<a href="#booking" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition inline-block">
+				Book Appointment
+			</a>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section id="services" class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4">
+			<h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
+			<div class="grid md:grid-cols-3 gap-8">
+				<!-- Service Card 1 -->
+				<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+					<div class="text-4xl mb-4">🚰</div>
+					<h3 class="text-2xl font-bold mb-3 text-gray-800">Emergency Repairs</h3>
+					<p class="text-gray-600">24/7 emergency plumbing services for leaks, burst pipes, and urgent issues.</p>
+				</div>
+				
+				<!-- Service Card 2 -->
+				<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+					<div class="text-4xl mb-4">🔧</div>
+					<h3 class="text-2xl font-bold mb-3 text-gray-800">Installations</h3>
+					<p class="text-gray-600">Professional installation of fixtures, water heaters, and plumbing systems.</p>
+				</div>
+				
+				<!-- Service Card 3 -->
+				<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+					<div class="text-4xl mb-4">🚿</div>
+					<h3 class="text-2xl font-bold mb-3 text-gray-800">Maintenance</h3>
+					<p class="text-gray-600">Regular maintenance and inspections to prevent costly problems.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Pricing Section -->
+	<section id="pricing" class="py-16 bg-white">
+		<div class="container mx-auto px-4 max-w-4xl">
+			<h2 class="text-4xl font-bold text-center mb-4 text-gray-800">Service Pricing</h2>
+			<p class="text-center text-gray-600 mb-12">Transparent pricing for all services</p>
+			
+			<div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+				<table class="w-full">
+					<thead>
+						<tr class="bg-blue-600 text-white">
+							<th class="text-left py-4 px-6 font-semibold text-lg">Service</th>
+							<th class="text-right py-4 px-6 font-semibold text-lg">Price</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-gray-200">
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Drain Unclogging</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">8.500 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Leak Repair (minor)</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">12.000 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Leak Repair (major)</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">25.000 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Faucet Installation</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">15.500 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Toilet Installation</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">22.000 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Water Heater Installation</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">45.000 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Pipe Replacement (per meter)</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">3.200 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Emergency Call-out Fee</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">18.000 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Inspection & Diagnosis</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">9.500 ISK</td>
+						</tr>
+						<tr class="hover:bg-gray-100 transition">
+							<td class="py-4 px-6 text-gray-800">Hourly Labor Rate</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">8.000 ISK/hr</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<p class="text-center text-gray-500 text-sm mt-6">
+				* Prices are estimates. Final cost may vary based on complexity and materials needed.
+			</p>
+		</div>
+	</section>
+
+	<!-- Booking Form Section -->
+	<section id="booking" class="py-16 bg-white">
+		<div class="container mx-auto px-4 max-w-2xl">
+			<h2 class="text-4xl font-bold text-center mb-8 text-gray-800">Book Your Service</h2>
+			<form 
+				name="plumbing-booking" 
+				method="POST" 
+				data-netlify="true"
+				netlify-honeypot="bot-field"
+				class="bg-gray-50 p-8 rounded-lg shadow-md"
+			>
+				<!-- Hidden fields for Netlify -->
+				<input type="hidden" name="form-name" value="plumbing-booking" />
+				
+				<!-- Honeypot spam protection -->
+				<p class="hidden">
+					<label>Don't fill this out: <input name="bot-field" /></label>
+				</p>
+
+				<!-- Name -->
+				<div class="mb-4">
+					<label class="block text-gray-700 font-semibold mb-2" for="name">
+						Full Name *
+					</label>
+					<input 
+						class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+						type="text" 
+						id="name" 
+						name="name" 
+						required
+					/>
+				</div>
+
+				<!-- Email -->
+				<div class="mb-4">
+					<label class="block text-gray-700 font-semibold mb-2" for="email">
+						Email *
+					</label>
+					<input 
+						class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+						type="email" 
+						id="email" 
+						name="email" 
+						required
+					/>
+				</div>
+
+				<!-- Phone -->
+				<div class="mb-4">
+					<label class="block text-gray-700 font-semibold mb-2" for="phone">
+						Phone Number *
+					</label>
+					<input 
+						class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+						type="tel" 
+						id="phone" 
+						name="phone" 
+						required
+					/>
+				</div>
+
+				<!-- Address -->
+				<div class="mb-4">
+					<label class="block text-gray-700 font-semibold mb-2" for="address">
+						Service Address *
+					</label>
+					<input 
+						class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+						type="text" 
+						id="address" 
+						name="address" 
+						required
+					/>
+				</div>
+
+				<!-- Service Type -->
+				<div class="mb-4">
+					<label class="block text-gray-700 font-semibold mb-2" for="service">
+						Service Needed *
+					</label>
+					<select 
+						class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+						id="service" 
+						name="service" 
+						required
+					>
+						<option value="">Select a service...</option>
+						<option value="Emergency Repair">Emergency Repair</option>
+						<option value="Installation">Installation</option>
+						<option value="Maintenance">Maintenance</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+
+				<!-- Message -->
+				<div class="mb-6">
+					<label class="block text-gray-700 font-semibold mb-2" for="message">
+						Description of Issue
+					</label>
+					<textarea 
+						class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+						id="message" 
+						name="message" 
+						rows="4"
+						placeholder="Please describe your plumbing issue..."
+					></textarea>
+				</div>
+
+				<!-- Submit Button -->
+				<button 
+					class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition" 
+					type="submit"
+				>
+					Submit Booking Request
+				</button>
+			</form>
+		</div>
+	</section>
+
+	<!-- Contact/Footer Section -->
+	<footer id="contact" class="bg-gray-800 text-white py-12">
+		<div class="container mx-auto px-4 text-center">
+			<h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+			<p class="mb-2">📞 Phone: (555) 123-4567</p>
+			<p class="mb-2">📧 Email: contact@yourplumbing.com</p>
+			<p class="mb-4">📍 Serving [Your City Area]</p>
+			<p class="text-gray-400 text-sm mt-8">© 2026 [Business Name] Plumbing. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script>
+		const navbar = document.getElementById('navbar');
+		const navInner = navbar?.querySelector('div');
+		const logo = document.getElementById('logo');
+		const brand = document.getElementById('brand');
+		
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 50) {
+				// Scrolled state - shrink and round
+				navbar?.classList.add('top-4');
+				navbar?.classList.remove('top-0');
+				navInner?.classList.add('rounded-full', 'shadow-xl', 'max-w-5xl', 'mx-auto', 'px-8', 'py-3');
+				navInner?.classList.remove('px-6', 'py-4');
+				logo?.classList.add('h-8');
+				logo?.classList.remove('h-10');
+				brand?.classList.add('text-xl');
+				brand?.classList.remove('text-2xl');
+			} else {
+				// Top state - full width
+				navbar?.classList.remove('top-4');
+				navbar?.classList.add('top-0');
+				navInner?.classList.remove('rounded-full', 'shadow-xl', 'max-w-5xl', 'mx-auto', 'px-8', 'py-3');
+				navInner?.classList.add('px-6', 'py-4');
+				logo?.classList.remove('h-8');
+				logo?.classList.add('h-10');
+				brand?.classList.remove('text-xl');
+				brand?.classList.add('text-2xl');
+			}
+		});
+	</script>
+
 </Layout>
+
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>
