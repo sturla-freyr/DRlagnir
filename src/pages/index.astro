@@ -30,8 +30,8 @@ import Layout from '../layouts/Layout.astro';
 
 		<!-- Content -->
 		<div class="container mx-auto px-4 text-center relative z-10">
-			<h2 class="text-5xl font-bold mb-4">Fagleg Pípulagningarþjónusta</h2>
-			<p class="text-xl mb-8">Snögg, Áreiðanleg, og Vinaleg Lausn</p>
+			<h2 class="text-5xl font-bold mb-4">Löggildur Pípulagningameistari</h2>
+			<p class="text-xl mb-8">Snögg, Áreiðanleg, og Sanngjörn Alhliðalausn</p>
 			<a href="#booking" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition inline-block">
 				Senda Verkbeiðni!
 			</a>
@@ -69,64 +69,55 @@ import Layout from '../layouts/Layout.astro';
 	<!-- Pricing Section -->
 	<section id="pricing" class="py-16 bg-white">
 		<div class="container mx-auto px-4 max-w-4xl">
-			<h2 class="text-4xl font-bold text-center mb-4 text-gray-800">Verðlagning þjónustu</h2>
-			<p class="text-center text-gray-600 mb-12">Gagnsæ verðlagning fyrir allar þjónustur</p>
+			<h2 class="text-4xl font-bold text-center mb-4 text-gray-800">Verðskrá</h2>
+			<p class="text-center text-gray-600 mb-12">Gagnsæ verðlagning fyrir alla þjónustu</p>
 
 			<div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
 				<table class="w-full">
 					<thead>
 						<tr class="bg-blue-600 text-white">
-							<th class="text-left py-4 px-6 font-semibold text-lg">Þjónusta</th>
-							<th class="text-right py-4 px-6 font-semibold text-lg">Verð</th>
+							<th class="text-left py-4 px-6 font-semibold text-lg">Þjónustur</th>
+							<th class="text-right py-4 px-6 font-semibold text-lg">Verð (án vsk.)</th>
 						</tr>
 					</thead>
 					<tbody class="divide-y divide-gray-200">
 						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Stíflulosun</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">108.500 ISK</td>
+							<td class="py-4 px-6 text-gray-800">Tímagjald dagvinnu</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">12.500 kr.</td>
 						</tr>
 						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Leikaviðgerð</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">120.000 ISK</td>
+							<td class="py-4 px-6 text-gray-800">Tímagjald kvöld-/helgarvinnu</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">22.500 kr.</td>
 						</tr>
 						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Leikaviðgerð (stór)</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">250.000 ISK</td>
+							<td class="py-4 px-6 text-gray-800">Verkfæragjald</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">6 %</td>
 						</tr>
 						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Krana Uppsetning</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">55.500 ISK</td>
+							<td class="py-4 px-6 text-gray-800">Akstur</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">5.000 kr.</td>
 						</tr>
 						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Klósett Uppsetning</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">220.000 ISK</td>
+							<td class="py-4 px-6 text-gray-800">Útkall í næturvinnu</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">69.900 kr.</td>
 						</tr>
 						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Vatnshitara Uppsetning</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">450.000 ISK</td>
+							<td class="py-4 px-6 text-gray-800">Skoðunargjald fyrir tilboðsgerð</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">30.000 kr.</td>
 						</tr>
 						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Útskipting lagna (per meter)</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">8.200 ISK</td>
-						</tr>
-						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Neyðarkall</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">18.000 ISK</td>
-						</tr>
-						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Skoðun & Greining</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">19.500 ISK</td>
-						</tr>
-						<tr class="hover:bg-gray-100 transition">
-							<td class="py-4 px-6 text-gray-800">Tímagjald</td>
-							<td class="py-4 px-6 text-right font-semibold text-gray-900">15.000 ISK/hr</td>
+							<td class="py-4 px-6 text-gray-800">Lágmarksgjald</td>
+							<td class="py-4 px-6 text-right font-semibold text-gray-900">2x tímar + akstur</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 
 			<p class="text-center text-gray-500 text-sm mt-6">
-				* Verð eru áætlanir. Lokakostnaður getur verið breytilegur eftir flækjustigi og nauðsynlegum efnum.
+				* Verð eru áætluð. Endanlegt verð getur verið breytilegt eftir flækjustigi og efnum sem þarf.
+			</p>
+			<p class="text-center text-gray-500 text-sm mt-6">
+				** Skoðundargjald er endurkræft ef verkið er samþykkt og framkvæmt af okkur.
 			</p>
 		</div>
 	</section>
@@ -217,11 +208,14 @@ import Layout from '../layouts/Layout.astro';
 						name="service" 
 						required
 					>
-						<option value="">Velsdu þjónustu...</option>
+						<option value="">Veldu þjónustu...</option>
 						<option value="Emergency Repair">Neyðarviðgerð</option>
+						<option value="Noheat">Hitaleysi</option>
 						<option value="Installation">Uppsetning</option>
 						<option value="Maintenance">Viðhald</option>
-						<option value="Other">Annað</option>
+						<option value="Repiping">Endurlögn</option>
+						<option value="Inspection">Skoðun</option>
+						
 					</select>
 				</div>
 
@@ -251,15 +245,29 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 
 	<!-- Contact/Footer Section -->
-	<footer id="contact" class="bg-gray-800 text-white py-12">
-		<div class="container mx-auto px-4 text-center">
-			<h3 class="text-2xl font-bold mb-4">Hafðu samband</h3>
-			<p class="mb-2">📞 Sími: (555) 123-4567</p>
-			<p class="mb-2">📧 Netfang: Daniel@drlagnir.is</p>
-			<p class="mb-4">📍 Þjónustumiðstöð [Your City Area]</p>
-			<p class="text-gray-400 text-sm mt-8">© 2026 DrLagnir. All rights reserved.</p>
+<footer id="contact" class="bg-gray-800 text-white py-12">
+	<div class="container mx-auto px-4">
+		<div class="grid md:grid-cols-2 gap-8 items-start mb-8">
+			<!-- Left side - Name and title -->
+			<div class="text-left">
+				<h3 class="text-2xl font-bold mb-2">Löggiltur Pípulagningarmeistari</h3>
+				<p class="text-xl">Daniel Riviere Villamizar</p>
+			</div>
+			
+			<!-- Right side - Contact info -->
+			<div class="text-left md:text-right">
+				<h3 class="text-2xl font-bold mb-4">Hafðu samband</h3>
+				<p class="mb-2">📞 Sími: (+354) 777-6059</p>
+				<p class="mb-2">📧 Netfang: Daniel@drlagnir.is</p>
+				<p class="mb-4">📍 Þjónustusvæði: Stórhöfuðborgarsvæðið</p>
+				<p class="mb-2">Kennitala: 571125-1450</p>
+			</div>
 		</div>
-	</footer>
+		
+		<!-- Copyright centered at bottom -->
+		<p class="text-gray-400 text-sm text-center border-t border-gray-700 pt-6">© 2026 DrLagnir. All rights reserved.</p>
+	</div>
+</footer>
 
 	<script>
 		const navbar = document.getElementById('navbar');
