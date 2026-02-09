@@ -5,23 +5,23 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<!-- Navigation -->
 	<nav id="navbar" class="sticky top-0 z-50 transition-all duration-300">
-		<div class="bg-blue-600 text-white px-6 py-4">
+		<div class="bg-blue-600 text-white px-4 md:px-6 py-2">
 			<div class="container mx-auto flex justify-between items-center">
-				<div class="flex items-center gap-3">
-					<img src="../logo.jpeg" alt="Logo" class="h-10 w-auto transition-all duration-300" id="logo" />
-					<h1 class="text-2xl font-bold transition-all duration-300" id="brand">Dr. Lagnir</h1>
+				<div id="logo-container" class="flex items-center gap-2 md:gap-3">
+					<img src="../logo.jpeg" alt="Logo" class="h-14 md:h-16 w-auto transition-all duration-300" id="logo" />
+					<h1 class="text-lg md:text-2xl font-bold transition-all duration-300" id="brand">Dr. Lagnir</h1>
 				</div>
-				<div class="space-x-6">
+				<div class="flex gap-3 md:gap-6 text-sm md:text-base">
 					<a href="#services" class="hover:text-blue-200 transition">Þjónustur</a>
 					<a href="#booking" class="hover:text-blue-200 transition">Verkbeiðni</a>
-					<a href="#contact" class="hover:text-blue-200 transition">Hafa Samband</a>
+					<a href="#contact" class="hover:text-blue-200 transition whitespace-nowrap">Samband</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 
 	<!-- Hero Section -->
-	<section class="relative text-white py-52 pt-48 overflow-hidden">
+	<section class="relative text-white py-32 md:py-52 pt-24 md:pt-48 overflow-hidden">
 		<!-- Background Image - fills entire area -->
 		<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/waterfall.jpg');"></div>
 
@@ -30,9 +30,11 @@ import Layout from '../layouts/Layout.astro';
 
 		<!-- Content -->
 		<div class="container mx-auto px-4 text-center relative z-10">
-			<h2 class="text-5xl font-bold mb-4">Löggildur Pípulagningameistari</h2>
-			<p class="text-xl mb-8">Snögg, Áreiðanleg, og Sanngjörn Alhliðalausn</p>
-			<a href="#booking" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition inline-block">
+			<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+				Löggildur<br class="sm:hidden" /> Pípulagningarmeistari
+			</h2>
+			<p class="text-base sm:text-lg md:text-xl mb-8 px-4">Snögg, Áreiðanleg, og Sanngjörn Alhliðalausn</p>
+			<a href="#booking" class="bg-white text-blue-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition inline-block">
 				Senda Verkbeiðni!
 			</a>
 		</div>
@@ -52,15 +54,15 @@ import Layout from '../layouts/Layout.astro';
 				<!-- Service Card 2 -->
 				<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
 					<div class="text-4xl mb-4">🔧</div>
-					<h3 class="text-2xl font-bold mb-3 text-gray-800">Uppsetningar</h3>
-					<p class="text-gray-600">Fagleg uppsetning á innréttingum, vatnshiturum og pípulagnakerfum.</p>
+					<h3 class="text-2xl font-bold mb-3 text-gray-800">Hitaleysi</h3>
+					<p class="text-gray-600">Komum hita á kofan í hvelli.</p>
 				</div>
 
 				<!-- Service Card 3 -->
 				<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
 					<div class="text-4xl mb-4">🚿</div>
 					<h3 class="text-2xl font-bold mb-3 text-gray-800">Viðhald</h3>
-					<p class="text-gray-600">Reglulegt viðhald og skoðanir til að koma í veg fyrir dýrar vandamál.</p>
+					<p class="text-gray-600">Reglulegt viðhald og skoðanir til að koma í veg fyrir dýrari vandamál.</p>
 				</div>
 			</div>
 		</div>
@@ -126,7 +128,10 @@ import Layout from '../layouts/Layout.astro';
 	<section id="booking" class="py-16 bg-white">
 		<div class="container mx-auto px-4 max-w-2xl">
 			<h2 class="text-4xl font-bold text-center mb-8 text-gray-800">Bóka þjónustu</h2>
+
+			<!-- Form -->
 			<form 
+				id="booking-form"
 				name="plumbing-booking" 
 				method="POST" 
 				data-netlify="true"
@@ -135,7 +140,7 @@ import Layout from '../layouts/Layout.astro';
 			>
 				<!-- Hidden fields for Netlify -->
 				<input type="hidden" name="form-name" value="plumbing-booking" />
-				
+
 				<!-- Honeypot spam protection -->
 				<p class="hidden">
 					<label>Don't fill this out: <input name="bot-field" /></label>
@@ -209,13 +214,11 @@ import Layout from '../layouts/Layout.astro';
 						required
 					>
 						<option value="">Veldu þjónustu...</option>
-						<option value="Emergency Repair">Neyðarviðgerð</option>
 						<option value="Noheat">Hitaleysi</option>
 						<option value="Installation">Uppsetning</option>
 						<option value="Maintenance">Viðhald</option>
 						<option value="Repiping">Endurlögn</option>
 						<option value="Inspection">Skoðun</option>
-						
 					</select>
 				</div>
 
@@ -241,66 +244,110 @@ import Layout from '../layouts/Layout.astro';
 					Senda beiðni!
 				</button>
 			</form>
+
+			<!-- Thank You Message (hidden by default) -->
+			<div id="thank-you-message" class="hidden bg-green-50 p-8 rounded-lg shadow-md border-2 border-green-200 text-center">
+				<div class="text-6xl mb-4">✓</div>
+				<h3 class="text-3xl font-bold text-green-800 mb-3">Takk fyrir!</h3>
+				<p class="text-lg text-gray-700 mb-4">Beiðni þín hefur verið móttekin.</p>
+				<p class="text-gray-600">Við munum hafa samband við þig fljótlega.</p>
+			</div>
 		</div>
 	</section>
 
 	<!-- Contact/Footer Section -->
-<footer id="contact" class="bg-gray-800 text-white py-12">
-	<div class="container mx-auto px-4">
-		<div class="grid md:grid-cols-2 gap-8 items-start mb-8">
-			<!-- Left side - Name and title -->
-			<div class="text-left">
-				<h3 class="text-2xl font-bold mb-2">Löggiltur Pípulagningarmeistari</h3>
-				<p class="text-xl">Daniel Riviere Villamizar</p>
+	<footer id="contact" class="bg-gray-800 text-white py-12">
+		<div class="container mx-auto px-4">
+			<div class="grid md:grid-cols-2 gap-8 items-start mb-8">
+				<!-- Left side - Name and title -->
+				<div class="text-left">
+					<h3 class="text-2xl font-bold mb-2">Löggiltur Pípulagningarmeistari</h3>
+					<p class="text-xl">Daniel Riviere Villamizar</p>
+				</div>
+
+				<!-- Right side - Contact info -->
+				<div class="text-left md:text-right">
+					<h3 class="text-2xl font-bold mb-4">Hafðu samband</h3>
+					<p class="mb-2">📞 Sími: (+354) 777-6059</p>
+					<p class="mb-2">📧 Netfang: Daniel@drlagnir.is</p>
+					<p class="mb-4">📍 Þjónustusvæði: Stórhöfuðborgarsvæðið</p>
+					<p class="mb-2">Kennitala: 571125-1450</p>
+				</div>
 			</div>
-			
-			<!-- Right side - Contact info -->
-			<div class="text-left md:text-right">
-				<h3 class="text-2xl font-bold mb-4">Hafðu samband</h3>
-				<p class="mb-2">📞 Sími: (+354) 777-6059</p>
-				<p class="mb-2">📧 Netfang: Daniel@drlagnir.is</p>
-				<p class="mb-4">📍 Þjónustusvæði: Stórhöfuðborgarsvæðið</p>
-				<p class="mb-2">Kennitala: 571125-1450</p>
-			</div>
+
+			<!-- Copyright centered at bottom -->
+			<p class="text-gray-400 text-sm text-center border-t border-gray-700 pt-6">© 2026 DrLagnir. All rights reserved.</p>
 		</div>
-		
-		<!-- Copyright centered at bottom -->
-		<p class="text-gray-400 text-sm text-center border-t border-gray-700 pt-6">© 2026 DrLagnir. All rights reserved.</p>
-	</div>
-</footer>
+	</footer>
 
 	<script>
 		const navbar = document.getElementById('navbar');
 		const navInner = navbar?.querySelector('div');
 		const logo = document.getElementById('logo');
 		const brand = document.getElementById('brand');
-		const heroSection = document.querySelector('section'); // Get hero section
-		
+		const logoContainer = document.getElementById('logo-container');
+		const heroSection = document.querySelector('section');
+			
 		window.addEventListener('scroll', () => {
 			if (window.scrollY > 50) {
-				// Scrolled state - shrink nav and reduce hero padding
+				// Scrolled state - pill mode
 				navbar?.classList.add('top-4');
 				navbar?.classList.remove('top-0');
-				navInner?.classList.add('rounded-full', 'shadow-xl', 'max-w-5xl', 'mx-auto', 'px-8', 'py-3');
-				navInner?.classList.remove('px-6', 'py-4');
-				logo?.classList.add('h-8');
-				logo?.classList.remove('h-10');
-				brand?.classList.add('text-xl');
-				brand?.classList.remove('text-2xl');
-				heroSection?.classList.remove('pt-24');
+				navInner?.classList.add('rounded-full', 'shadow-xl', 'max-w-5xl', 'mx-auto', 'py-2');
+				navInner?.classList.remove('px-4', 'md:px-6', 'py-2');
+				// Remove left padding, keep right padding
+				navInner?.classList.add('pl-0', 'pr-8');
+				// Make logo circular and exact size to fit pill
+				logo?.classList.add('h-11', 'rounded-full');
+				logo?.classList.remove('h-14', 'md:h-16');
+				logoContainer?.classList.add('-ml-0.5'); // Slight negative margin to sit flush
+				brand?.classList.add('text-lg');
+				brand?.classList.remove('text-lg', 'md:text-2xl');
+				heroSection?.classList.remove('pt-24', 'md:pt-48');
 				heroSection?.classList.add('pt-8');
 			} else {
-				// Top state - full width nav and full hero padding
+				// Top state - full width with square logo
 				navbar?.classList.remove('top-4');
 				navbar?.classList.add('top-0');
-				navInner?.classList.remove('rounded-full', 'shadow-xl', 'max-w-5xl', 'mx-auto', 'px-8', 'py-3');
-				navInner?.classList.add('px-6', 'py-4');
-				logo?.classList.remove('h-8');
-				logo?.classList.add('h-10');
-				brand?.classList.remove('text-xl');
-				brand?.classList.add('text-2xl');
+				navInner?.classList.remove('rounded-full', 'shadow-xl', 'max-w-5xl', 'mx-auto', 'pl-0', 'pr-8', 'py-2');
+				navInner?.classList.add('px-4', 'md:px-6', 'py-2');
+				// Square logo, larger size
+				logo?.classList.remove('h-11', 'rounded-full');
+				logo?.classList.add('h-14', 'md:h-16');
+				logoContainer?.classList.remove('-ml-0.5');
+				brand?.classList.remove('text-lg');
+				brand?.classList.add('text-lg', 'md:text-2xl');
 				heroSection?.classList.remove('pt-8');
-				heroSection?.classList.add('pt-24');
+				heroSection?.classList.add('pt-24', 'md:pt-48');
+			}
+		});
+
+		// Form submission handler
+		const form = document.getElementById('booking-form');
+		const thankYouMessage = document.getElementById('thank-you-message');
+		
+		form?.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			const formData = new FormData(form);
+
+			try {
+				const response = await fetch('/', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					body: new URLSearchParams(formData).toString()
+				});
+
+				if (response.ok) {
+					// Hide form and show thank you message
+					form.classList.add('hidden');
+					thankYouMessage?.classList.remove('hidden');
+
+					// Smooth scroll to the message
+					thankYouMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			} catch (error) {
+				alert('Villa kom upp. Vinsamlegast reyndu aftur.');
 			}
 		});
 	</script>
